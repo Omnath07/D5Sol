@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Omnath.Ganguly\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Omnath.Ganguly\\.nuget\\packages"
+    ]
+  }
+}
