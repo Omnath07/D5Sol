@@ -51,7 +51,7 @@ namespace D5Sol.Repository
             _dbContext.SaveChanges();
         }
 
-        //Delete Person  
+        //Delete Job  
         void IRepository<jobs>.DeleteJob(jobs _object)
         {
             try
