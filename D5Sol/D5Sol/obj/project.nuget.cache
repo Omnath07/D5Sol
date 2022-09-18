@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "GXTLFlu4LfXNfG+m6a123gKyTWjl6n20kCp+3XS8LsoIcjPTobXFblib/uBRLYQ+xl8eyHaEXVhn+X464IPHog==",
+  "dgSpecHash": "hcC4CM5JfbPZADwnwJca9KipOVm2d4bqDr7QSDU2+bfNWclZLj7Q2Kb8FcloGKdoeNIstdb8jWRgGcw4HaItNQ==",
   "success": true,
   "projectFilePath": "C:\\Project\\D5Git2\\D5Sol\\D5Sol\\D5Sol.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Omnath.Ganguly\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.9\\microsoft.aspnet.webapi.client.5.2.9.nupkg.sha512",
     "C:\\Users\\Omnath.Ganguly\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Omnath.Ganguly\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\Omnath.Ganguly\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",
@@ -56,6 +57,7 @@
     "C:\\Users\\Omnath.Ganguly\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\Omnath.Ganguly\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\Omnath.Ganguly\\.nuget\\packages\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
+    "C:\\Users\\Omnath.Ganguly\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
     "C:\\Users\\Omnath.Ganguly\\.nuget\\packages\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
     "C:\\Users\\Omnath.Ganguly\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Omnath.Ganguly\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

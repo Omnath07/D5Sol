@@ -16,12 +16,12 @@ namespace D5Sol.Repository
         {
             _dbContext = applicationDbContext;
         }
-        public Task<jobs> CreateJob(jobs _object)
-        {
-            var obj = _dbContext.Jobs.AddAsync(_object);
-            _dbContext.SaveChanges();
-            return null;
-        }
+        //public Task<jobs> CreateJob(jobs _object)
+        //{
+        //    var obj = _dbContext.Jobs.AddAsync(_object);
+        //    _dbContext.SaveChanges();
+        //    return null;
+        //}
 
        
 
@@ -46,8 +46,21 @@ namespace D5Sol.Repository
 
         public void UpdateJob(jobs _object)
         {
-            var DataList = _dbContext.Jobs.Where(x => x.Id == _object.Id).FirstOrDefault();
-            _dbContext.Jobs.Update(DataList);
+            //var DataList = _dbContext.Jobs.Where(x => x.Id == _object.Id).FirstOrDefault();
+            //_dbContext.Jobs.Update(_object);
+            //_dbContext.SaveChanges();
+
+             var DataList = _dbContext.Jobs.Where(x => x.Id == _object.Id).FirstOrDefault();
+            DataList.title = _object.title;
+            DataList.description = _object.description;
+            DataList.locationId = _object.locationId;
+            DataList.departmentId = _object.departmentId;
+
+        }
+
+        void IRepository<jobs>.CreateJob(jobs _object)
+        {
+           _dbContext.Jobs.AddAsync(_object);
             _dbContext.SaveChanges();
         }
 
@@ -59,6 +72,8 @@ namespace D5Sol.Repository
                 var DataList = _dbContext.Jobs.Where(x => x.Id == _object.Id).FirstOrDefault();
 
                 _dbContext.Remove(DataList);
+                _dbContext.SaveChangesAsync();
+
 
             }
             catch (Exception)

@@ -24,18 +24,18 @@ namespace D5Sol.Controllers
         }
 
         //Add job  
-        [HttpPost("AddPerson")]
-        public async Task<Object> AddJob([FromBody] jobs myjob)
+        [HttpPost("AddJob")]
+        public async Task<ActionResult<jobs>> AddJob(jobs myjob)
         {
             try
             {
-                await _Jobs.CreateJob(myjob);
-                return true;
+                _Jobs.CreateJob(myjob);
+                return myjob;
             }
             catch (Exception)
             {
 
-                return false;
+                return NotFound();
             }
         }
 
@@ -43,15 +43,15 @@ namespace D5Sol.Controllers
 
 
         //Update job Details  
-        [HttpPut("Update")]
-        public async Task<ActionResult<jobs>> Update(int id)
+        [HttpPut("{id}")]
+        public async Task<ActionResult<jobs>> UpdateJob(jobs j)
         {
-            var jobs = _Jobs.GetById(id);
+            var jobs = _Jobs.GetById(j.Id);
             if (jobs == null)
             {
                 return NotFound();
             }
-            _Jobs.UpdateJob(jobs);
+            _Jobs.UpdateJob(j);
             return jobs;
         }
 

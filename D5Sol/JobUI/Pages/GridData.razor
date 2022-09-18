@@ -1,0 +1,44 @@
+﻿@page "/griddata"
+@using DataLayer.Models
+@using JobUI.Services
+@inject IProductServices _productServices
+<h3>JobList</h3>
+
+@code {
+    [Inject]
+    public IEnumerable<jobs> Data { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        Data = await _productServices.getAllProduct();
+    }
+
+}
+
+@if (Data==null)
+{
+    <div class="loader"></div>
+}
+else
+{
+    @if (Data.Any())
+    {
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                </tr>
+
+            </thead>
+            <tbody>
+            @foreach(var item in Data)
+            {
+            <tr>
+                <td>@item.Id</td>
+             </tr>
+        }
+       
+        </tbody>
+    </table>
+    }
+}

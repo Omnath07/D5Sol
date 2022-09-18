@@ -1,0 +1,28 @@
+﻿@page "/jobdelete/{id:int}"
+@using DataLayer.Models
+@using JobUI.Services
+@inject IProductServices productServices
+@inject NavigationManager Navigation
+
+<h3>Job Deleting.....</h3>
+
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+    jobs job = new jobs();
+
+    protected override async Task OnInitializedAsync()
+    {
+     // await productServices.getJobId(id);
+       await productServices.DeeteJob(id);
+        Navigation.NavigateTo("JobList");
+    }
+   
+    //protected async Task DeleteJob()
+    //{
+    //    await productServices.DeeteJob(job);
+    //    Navigation.NavigateTo("JobList");
+    //}
+
+}

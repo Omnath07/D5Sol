@@ -5,7 +5,7 @@ namespace D5Sol.Interface
 {
     public interface IRepository<T>
     {
-        public Task<T> CreateJob(T _object);
+        public void CreateJob(T _object);
 
         public void UpdateJob(T _object);
 

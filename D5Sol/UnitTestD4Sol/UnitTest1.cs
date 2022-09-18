@@ -10,7 +10,11 @@ namespace UnitTestD4Sol
         [TestMethod]
         public void TestMethod1()
         {
-           
+            var testJob = GetJobs();
+            var controller = new SimpleProductController(testProducts);
+
+            var result = controller.GetJobs() as List<Jobs>;
+            Assert.AreEqual(testProducts.Count, result.Count);
         }
     }
 }
