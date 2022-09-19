@@ -1,4 +1,4 @@
-﻿@page "/jobedit/{id}"
+﻿@page "/jobedit/{id:int}"
 @using DataLayer.Models
 @using JobUI.Services
 @inject IProductServices productServices
@@ -6,44 +6,35 @@
 
 <h3>Edit Job</h3>
 <from>
- @if (Data==null)
-{
-        <div>Loding.....</div>
-    }
-    else
-    {
-        @if (Data.Any())
-        {
-            @foreach (var item in Data)
-            {
+ 
+           
                 <div class="form-group">
                     <label>Title</label>
-                    <input class="form-control"  @bind="@item.title"/>
+                    <input class="form-control"  @bind="@job.title"/>
                 </div>   <div class="form-group">
                     <label>Description</label>
-                    <input class="form-control" @bind="@item.description"/>
+                    <input class="form-control" @bind="@job.description"/>
                 </div>    <div class="form-group">
                     <label>Location</label>
-                    <input class="form-control" @bind="@item.locationId"/>
+                    <input class="form-control" @bind="@job.locationId"/>
                 </div>    <div class="form-group">
                     <input type="button" class="btn btn-primary" value="Save" @onclick="@EditJob" />
                 </div>
-            }
+           
 
-        }
-        }
         </from>
 
 
 @code {
     [Parameter]
-    public string id { get; set; }
+    public int id { get; set; }
     jobs job = new jobs();
     public List<jobs> Data { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-       Data=(await productServices.getJobId(id)).ToList();
+
+        job = await productServices.getJobId(id);
 
     }
 

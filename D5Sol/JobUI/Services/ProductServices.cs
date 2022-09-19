@@ -36,7 +36,7 @@ namespace JobUI.Services
              await httpClient.PutJsonAsync("api/jobs/" + id,hero);
             return null;
         }
-
+        
         public async Task<IEnumerable<jobs>> getAllProduct()
         {
             return await httpClient.GetFromJsonAsync<IEnumerable<jobs>>("api/jobs");
@@ -45,9 +45,9 @@ namespace JobUI.Services
       
        
 
-        public async Task<List<jobs>> getJobId(string id)
+        public async Task<jobs> getJobId(int id)
         {
-            return await httpClient.GetJsonAsync<List<jobs>>("api/jobs");
+            return await httpClient.GetJsonAsync<jobs>("api/jobs/"+id);
        
         }
     }

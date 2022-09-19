@@ -89,7 +89,7 @@ using JobUI.Services;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/jobedit/{id}")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/jobedit/{id:int}")]
     public partial class JobEdit : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -98,16 +98,17 @@ using JobUI.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "C:\Project\D5Git2\D5Sol\JobUI\Pages\JobEdit.razor"
+#line 28 "C:\Project\D5Git2\D5Sol\JobUI\Pages\JobEdit.razor"
        
     [Parameter]
-    public string id { get; set; }
+    public int id { get; set; }
     jobs job = new jobs();
     public List<jobs> Data { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-       Data=(await productServices.getJobId(id)).ToList();
+
+        job = await productServices.getJobId(id);
 
     }
 

@@ -11,7 +11,7 @@ namespace JobUI.Services
         Task<IEnumerable<jobs>> getAllProduct();
         Task<List<jobs>> CreateSJob(jobs hero);
         Task<List<jobs>> DeeteJob(int id);
-        Task<List<jobs>> getJobId(string id);
+        Task<jobs> getJobId(int id);
         Task<List<jobs>> EditJob(jobs hero);
     }
 }
